@@ -1,9 +1,9 @@
 *.http
 *.toml
 
-src/registers/
-src/registers_anal/
-build/qdrant_data/
+backend/src/registers/
+backend/src/registers_anal/
+backend/qdrant_data/
 
 .venv/
 .idea/

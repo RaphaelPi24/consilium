@@ -5,10 +5,10 @@ import httpx
 from fastapi import Body, Request
 from fastapi import FastAPI
 
-from generator import MedicalTextGenerator
-from google_translator import GoogleTranslator
-from llm_models.biobert import Biobert
-from llm_models.gguf import Gguf
+from infrastructure.biobert import Biobert
+from infrastructure.gguf import Gguf
+from infrastructure.google_translator import GoogleTranslator
+from services.generator import MedicalTextGenerator
 
 logging.basicConfig(
     level=logging.INFO,
@@ -60,4 +60,3 @@ async def request_post(request: Request, req: str = Body()):  # ?
         result_ru = await translator.english_to_russian(result_gen_eng)
         logger.info(f'ответ успешно сгенерирован:\n {result_ru}')
         return result_ru
-

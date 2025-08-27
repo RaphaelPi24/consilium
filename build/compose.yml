@@ -9,8 +9,6 @@ services:
     environment:
       - PYTHONPATH=/app
       - QDRANT_HOST=qdrant # Используем имя сервиса как хост
-#    ports:
-#      - "8002:8002"
     depends_on:
       - qdrant
     volumes:
@@ -23,11 +21,11 @@ services:
       - "6333:6333"
       - "6334:6334"
     volumes:
-      - ./qdrant_data:/qdrant/storage
+      - ../backend/qdrant_data:/qdrant/storage
 
   lookaround:
     build:
-      context: ../LookAround
+      context: ../front
       dockerfile: Dockerfile
     depends_on:
       - fastapi

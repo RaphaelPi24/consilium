@@ -9,8 +9,8 @@ import torch
 from qdrant_client.models import PointStruct
 from tqdm import tqdm
 
-from llm_models.biobert import Biobert
-from qdrant_db.db import Qdrant
+from infrastructure.biobert import Biobert
+from infrastructure.db import Qdrant
 
 logger = logging.getLogger(__name__)
 
